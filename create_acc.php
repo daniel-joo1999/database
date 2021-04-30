@@ -20,7 +20,7 @@ $sql="INSERT INTO accounts (username, password, email)
 die('Error: ' . mysqli_error($con));
 }
 mysqli_close($con);
-header('Location: profile.html');
+header('Location: index.html');
 
 exit;
    ?>

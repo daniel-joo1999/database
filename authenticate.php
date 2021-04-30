@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 // Change this to your connection info.
 $DATABASE_HOST = 'usersrv01.cs.virginia.edu';
@@ -51,3 +52,13 @@ if ($stmt = $con->prepare('SELECT uid, password FROM accounts WHERE username = ?
 	$stmt->close();
 }
 ?>
+<html>
+<head>
+</head>
+
+<body>
+<div id="center_botton">
+	<button onclick="location.href='profile.html'">Make a Profile</button>
+</div>
+</body>
+</html>

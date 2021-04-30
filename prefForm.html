@@ -1,0 +1,28 @@
+<html>
+<body>
+ <h1> Select Your Preferences </h1>
+ <form action="userPref.php" method="post">
+ <label for="settingType"> Type of Setting</label>
+ <select name="settingType" id="setting" size="7" multiple="multiple">
+        <option value="indoor">Indoor</option>
+        <option value="outdoor">Outdoor</option>
+        <option value="day">Daytime</option>
+        <option value="night">Nighttime</option>
+        <option value="busy">Busy</option>
+        <option value="quiet">Quiet</option>
+        <option value="other">Other</option>
+ </select>
+
+ <label for="activityType">Activity</label>
+ <select name="activityType" id="activity" size="6" multiple="multiple">
+        <option value="food">Food</option>
+        <option value="exercise">Exercise</option>
+        <option value="hike">Hiking</option>
+        <option value="stars">Stargazing</option>
+        <option value="walk">Walking</option>
+        <option value="other">Other</option>
+ </select>
+  <p><input type="submit" /></p>
+</body>
+</html>
+
