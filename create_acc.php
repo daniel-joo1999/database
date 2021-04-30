@@ -13,11 +13,14 @@ $pass=hash('sha512',$_POST[psw]);
 $sql="INSERT INTO accounts (username, password, email)
  VALUES
  ('$_POST[usr]', '$pass', '$_POST[email]')";
+
+
       if (!mysqli_query($con,$sql))
         {
 die('Error: ' . mysqli_error($con));
 }
 mysqli_close($con);
-header('Location: index.html');
+header('Location: profile.html');
+
 exit;
    ?>
