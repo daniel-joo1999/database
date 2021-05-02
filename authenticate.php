@@ -60,5 +60,6 @@ if ($stmt = $con->prepare('SELECT uid, password FROM accounts WHERE username = ?
 <div id="center_botton">
 	<button onclick="location.href='profile.html'">Make a Profile</button>
 </div>
+}
 </body>
 </html>
