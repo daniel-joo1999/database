@@ -18,6 +18,7 @@ if ( !isset($_POST['username'], $_POST['password']) ) {
 	// Could not get the data that should have been sent.
 	exit('Please fill both the username and password fields!');
 }
+$correct = True;
 // Prepare our SQL, preparing the SQL statement will prevent SQL injection.
 if ($stmt = $con->prepare('SELECT uid, password FROM accounts WHERE username = ?')) {
 	// Bind parameters (s = string, i = int, b = blob, etc), in our case the username is a string so we use "s"
@@ -43,13 +44,20 @@ if ($stmt = $con->prepare('SELECT uid, password FROM accounts WHERE username = ?
 	} else {
 		// Incorrect password
 		echo 'Incorrect username and/or password!';
+		$correct = False;
+		//header("Location: index.html");
 	}
 } else {
 	// Incorrect username
 	echo 'Incorrect username and/or password!';
+	$correct =False;
+	//header("Location: index.html");
 }
 
 	$stmt->close();
+}
+if($correct == False){
+	header("Location: index.html");
 }
 ?>
 <html>
