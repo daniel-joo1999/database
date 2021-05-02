@@ -1,4 +1,3 @@
-
 <?php
  session_start();
  include_once("./library.php"); // To connect to the database
@@ -9,9 +8,9 @@
  echo "Failed to connect to MySQL: " . mysqli_connect_error();
  }
  // Form the SQL query (an INSERT query)
- $sql="INSERT INTO userPref (uid, setting, activity,price)
- VALUES
- ($_SESSION[id], '$_POST[settingType]','$_POST[activityType]', '$_POST[priceType]')";
+ $sql="UPDATE userPref 
+SET setting = '$_POST[settingType]', activity = '$_POST[activityType]',price = '$_POST[priceType]'
+WHERE uid = $_SESSION[id]";
 
  if (!mysqli_query($con,$sql))
  {
@@ -20,5 +19,4 @@
  echo "1 record added"; // Output to user
  mysqli_close($con);
  header('Location: prefForm.html');
-
 ?>
