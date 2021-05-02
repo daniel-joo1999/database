@@ -61,7 +61,7 @@ $i++;
  <?php
 }
 else{
-    echo "No result found";
+    echo "No Visited Locations";
 }
 ?>
  </body>
