@@ -68,5 +68,6 @@ if($correct == False){
 <div id="center_botton">
 	<button onclick="location.href='profile.html'">Make a Profile</button>
 </div>
+}
 </body>
 </html>
