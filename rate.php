@@ -26,9 +26,9 @@ VALUES ('$uid', '$did', '$_POST[rating]');";
  		}
  	}
  $sql2="
- UPDATE rates
+ UPDATE dateIdea
  SET rating = (SELECT AVG(rating)
- 				FROM dateIdeaRatings
+ 				FROM rates
  				WHERE did = '$did')
  WHERE did = '$did';";
 // -- SET rating = (SELECT AVG(t.rating)
