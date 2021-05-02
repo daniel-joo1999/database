@@ -1,4 +1,5 @@
 <?php
+session_start();
 include_once("./library.php");
 $con = new mysqli($SERVER, $USERNAME, $PASSWORD, $DATABASE);
 if (mysqli_connect_errno())
@@ -42,7 +43,6 @@ if (mysqli_num_rows($result) > 0) {
     <td>description</td>
     <td>dateVisited</td>
     <td>rating</td>
-
   </tr>
 <?php
 $i=0;
@@ -52,7 +52,7 @@ while($row = mysqli_fetch_array($result)) {
     <td><?php echo $row["ideaTitle"]; ?></td>
     <td><?php echo $row["description"]; ?></td>
     <td><?php echo $row["dateVisited"]; ?></td>
-    <td><?php echo $row["rating"]; ?></td>
+    <td><?php echo '<a href="ratingForm.php?did=' . $row["did"] . '&title=' . $row["ideaTitle"] . '">' . $row["rating"] . '</a>';?></td>
 </tr>
 <?php
 $i++;

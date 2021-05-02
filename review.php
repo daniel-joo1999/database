@@ -9,7 +9,7 @@
  echo "Failed to connect to MySQL: " . mysqli_connect_error();
  }
  // Form the SQL query (an INSERT query)
- $sql="INSERT INTO reivew (description, datePosted, uid)
+ $sql="INSERT INTO review (description, datePosted, uid)
  VALUES
  ('$_POST[description]', '$_POST[date]', $_SESSION[id])";
 
