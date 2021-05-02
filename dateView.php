@@ -5,7 +5,7 @@ if (mysqli_connect_errno())
  {
  echo "Failed to connect to MySQL: " . mysqli_connect_error();
  }
- $result = mysqli_query($conn,"SELECT * FROM dateIdea");
+ $result = mysqli_query($con,"SELECT * FROM dateIdea");
 ?>
 <!DOCTYPE html>
 <html>
@@ -42,6 +42,7 @@ if (mysqli_num_rows($result) > 0) {
     <td>description</td>
     <td>dateVisited</td>
     <td>rating</td>
+
   </tr>
 <?php
 $i=0;
