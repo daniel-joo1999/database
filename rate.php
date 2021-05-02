@@ -13,12 +13,12 @@
  $did = $_POST["did"];
  $uid = $_SESSION['id'];
 $sql="
-INSERT INTO dateIdeaRatings (uid, did, rating)
+INSERT INTO rates (uid, did, rating)
 VALUES ('$uid', '$did', '$_POST[rating]');";
  if (!mysqli_query($con,$sql))
  {
  	$sql3="
- 	UPDATE dateIdeaRatings
+ 	UPDATE rates
  	SET rating = '$_POST[rating]'
  	WHERE uid = '$uid' AND did = '$did';";
 	if (!mysqli_query($con,$sql3)){
@@ -26,7 +26,7 @@ VALUES ('$uid', '$did', '$_POST[rating]');";
  		}
  	}
  $sql2="
- UPDATE dateIdea
+ UPDATE rates
  SET rating = (SELECT AVG(rating)
  				FROM dateIdeaRatings
  				WHERE did = '$did')
