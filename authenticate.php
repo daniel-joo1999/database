@@ -19,6 +19,7 @@ if ( !isset($_POST['username'], $_POST['password']) ) {
 	exit('Please fill both the username and password fields!');
 }
 $correct = True;
+$home = True;
 // Prepare our SQL, preparing the SQL statement will prevent SQL injection.
 if ($stmt = $con->prepare('SELECT uid, password FROM accounts WHERE username = ?')) {
 	// Bind parameters (s = string, i = int, b = blob, etc), in our case the username is a string so we use "s"
@@ -53,21 +54,30 @@ if ($stmt = $con->prepare('SELECT uid, password FROM accounts WHERE username = ?
 	$correct =False;
 	//header("Location: index.html");
 }
+if ($correct = True) {
+	if ($stmt = $con->prepare('SELECT uid FROM accounts NATURAL JOIN user WHERE uid = ?')) {
+		$stmt->bind_param('i',$_SESSION['id']);
+		$stmt->execute();
+		$stmt->store_result();
+		if ($stmt->num_rows > 0) {
+		$home = False;
+		} else {
+		$home = True;
+		}	
+		}
+}
+
 
 	$stmt->close();
 }
 if($correct == False){
 	header("Location: index.html");
 }
-?>
-<html>
-<head>
-</head>
-
-<body>
-<div id="center_botton">
-	<button onclick="location.href='profile.html'">Make a Profile</button>
-</div>
+if($home == False){
+	header("Location: home.html");
 }
-</body>
-</html>
+else {
+	header("Location: profile.html");
+}
+?>
+
