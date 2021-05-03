@@ -23,9 +23,13 @@
        </script>
        <!--end of Navigation bar-->
 <body>
- <h1> Update Your Preferences </h1>
+       <div class="jumbotron text-center">
+              <h1> Update Your Preferences </h1>
+       </div>
 
  <br>
+ <div class="container">
+<center>
  <form action="updatePref.php" method = "post">
        <label for="settingType">Choose a Setting:</label>
        <select name="settingType" id="setting">
@@ -50,9 +54,17 @@
               <option value="2">$40-$80</option>
               <option value="3">$80 and Above</option>
        </select>
+       <br>
+       <br>
        <input type="submit">
      </form>
+</center>
+</div>
  <br> 
 </body>
+<br>
+ <div class="back" style="text-align:center">
+			<a href="home.html"><button type="button" class="btn btn-secondary">Return to Home</button></a>
+		</div>
 </html>
 

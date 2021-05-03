@@ -38,7 +38,11 @@ $(function(){
 });
 </script>
 <body>
+  <div class="jumbotron text-center">
  <h1>When did you visit this place?</h1>
+</div>
+<div class="container">
+  <center>
  <form action="visited.php" method="post">
 
  <input type="hidden" id="lid" name="lid" value=<?php echo "{$lid}"?> >
@@ -47,5 +51,12 @@ $(function(){
 <input type="date" id="date" name="date"><br>
   <p><input type="submit" /></p>
 </form>
+</center>
+</div>
 </body>
+<br>
+<div class="back" style="text-align:center">
+  <a href="locationView.php"><button type="button" class="btn btn-secondary">Return to Location</button></a>
+	<a href="home.html"><button type="button" class="btn btn-secondary">Return to Home</button></a>
+</div>
 </html>

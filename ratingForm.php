@@ -31,6 +31,7 @@ $(function(){
 <body>
 <div class="jumbotron text-center">
   <h1><?php echo "{$title}" ?></h1>
+  <p>Leaving a Rating on This Idea!</p>
 </div>
 <center>
  <form action="rate.php" method="post">

@@ -53,16 +53,20 @@ $(function(){
 <!--end of Navigation bar-->
 
 <body>
+<div class="jumbotron text-center">
+    <h1>Check Out These Date Ideas!</h1>
+</div>
+  <div class="container">
 <?php
 if (mysqli_num_rows($result) > 0) {
 ?>
   <table>
   
   <tr>
-    <td>Idea Name</td>
-    <td>Idea Description</td>
-    <td>Date Visited</td>
-    <td>Rating</td>
+    <td><strong>Idea Name</strong></td>
+    <td><strong>Idea Description</strong></td>
+    <td><strong>Date Visited</strong></td>
+    <td><strong>Rating</strong></td>
   </tr>
 <?php
 $i=0;
@@ -85,5 +89,10 @@ else{
     echo "No result found";
 }
 ?>
+</div>
  </body>
+ <br>
+ <div class="back" style="text-align:center">
+			<a href="home.html"><button type="button" class="btn btn-secondary">Return to Home</button></a>
+		</div>
 </html>

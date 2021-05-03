@@ -53,15 +53,19 @@ $(function(){
 
  </head>
 <body>
+  <div class="jumbotron text-center">
   <h1> <?php echo "Reviews for {$lname}" ?> </h1>
+</div>
+<div class="container">
+  <center>
 <?php
 if (mysqli_num_rows($result) > 0) {
 ?>
   <table>
   
   <tr>
-    <td>Review</td>
-    <td>Date</td>
+    <td><strong>Review</strong></td>
+    <td><strong>Date</strong></td>
   </tr>
 <?php
 
@@ -76,12 +80,21 @@ $i++;
 }
 ?>
 </table>
+  <center>
  <?php
 }
 else{
     echo "No result found";
 }
 ?>
-<p><?php echo '<a href="reviewForm.php?lid=' . $lid . '">Leave a review!</a>'?></p>
+<br>
+<br>
+<p><?php echo '<button type="button" class="btn btn-light"><a href="reviewForm.php?lid=' . $lid . '"><strong>Leave a review!</strong></a></button>'?></p>
+</center>
+</div>
  </body>
+ <div class="back" style="text-align:center">
+			<a href="home.html"><button type="button" class="btn btn-secondary">Return to Home</button></a>
+      <a href="locationView.php"><button type="button" class="btn btn-secondary">Return To Locations</button></a>
+		</div>
 </html>

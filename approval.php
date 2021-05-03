@@ -47,12 +47,17 @@ if (mysqli_connect_errno())
 
 <script>
 $(function(){
-  $("#nav-placeholder").load("base.html");
+  $("#nav-placeholder").load("base2.html");
 });
 </script>
 <!--end of Navigation bar-->
 
 <body>
+  <div class="jumbotron text-center">
+    <h1> Approval for Location Suggestions </h1>
+    <p> Approve location suggestions to be seen by the public </p>
+</div>
+  <div class="container">
 <?php
 if (mysqli_num_rows($result) > 0) {
 ?>
@@ -91,5 +96,10 @@ else{
     echo "No result found";
 }
 ?>
+</div>
  </body>
+ <br>
+ <div class="back" style="text-align:center">
+			<a href="logout.php"><button type="button" class="btn btn-secondary">Log Out</button></a>
+		</div>
 </html>

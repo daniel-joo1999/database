@@ -16,12 +16,16 @@
 
 <script>
 $(function(){
-  $("#nav-placeholder").load("base.html");
+  $("#nav-placeholder").load("base2.html");
 });
 </script>
 <!--end of Navigation bar-->
 <body>
+  <div class="jumbotron text-center">
  <h1> What is Your Name? </h1>
+</div>
+ <div class="container">
+   <center>
  <form action="profile.php" method="post">
 
  <p>First Name: <input type="text" name="firstName" /></p>
@@ -29,5 +33,7 @@ $(function(){
 
  <p><input type="submit" /></p>
  </form>
+</center>
+</div>
 </body>
 </html>

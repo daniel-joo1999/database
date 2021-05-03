@@ -85,7 +85,11 @@ $(function(){
 </script>
 <!--end of Navigation bar-->
 <body>
-
+  <div class="jumbotron text-center">
+    <h1>Visited Places</h1>
+    <p>Here are a list of places you've visited!</p>
+</div>
+  <div class="container">
 <?php
 
 if (mysqli_num_rows($result) > 0) {
@@ -98,8 +102,8 @@ if (mysqli_num_rows($result) > 0) {
 
   <tr>
 
-    <td>Location Visited</td>
-    <td>Date Visited</td>
+    <td><strong>Location Visited</strong></td>
+    <td><strong>Date Visited</strong></td>
 
   </tr>
 
@@ -139,7 +143,11 @@ else{
 }
 
 ?>
-
+</div>
  </body>
-
+ <br>
+ <div class="back" style="text-align:center">
+			<a href="home.html"><button type="button" class="btn btn-secondary">Return to Home</button></a>
+      <a href="locationView.php"><button type="button" class="btn btn-secondary">Go To Locations</button></a>
+		</div>
 </html>

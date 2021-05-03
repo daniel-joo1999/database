@@ -75,6 +75,10 @@ $(function(){
 <!--end of Navigation bar-->
 
 <body>
+<div class="jumbotron text-center">
+    <h1>Check Out These Locations!</h1>
+</div>
+<div class="container">
 <?php
 if (mysqli_num_rows($result) > 0) {
 ?>
@@ -105,5 +109,10 @@ else{
     echo "No result found";
 }
 ?>
+</div>
+<br>
  </body>
+ <div class="back" style="text-align:center">
+			<a href="home.html"><button type="button" class="btn btn-secondary">Return to Home</button></a>
+		</div>
 </html>

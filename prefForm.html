@@ -16,14 +16,17 @@
 
 <script>
 $(function(){
-  $("#nav-placeholder").load("base.html");
+  $("#nav-placeholder").load("base2.html");
 });
 </script>
 <!--end of Navigation bar-->
 <body>
+       <div class="jumbotron text-center">
  <h1> Select Your Preferences </h1>
+</div>
+<div class="container">
+       <center>
  <form action="userPref.php" method="post">
- <label for="settingType"> Type of Setting</label>
  <br>
  <form action="/userPref.php">
        <label for="settingType">Choose a Setting:</label>
@@ -48,9 +51,12 @@ $(function(){
               <option value="2">$40-$80</option>
               <option value="3">$80 and Above</option>
        </select>
+       <br>
        <input type="submit">
      </form>
  <br> 
+</center>
+</div>
 </body>
 </html>
 
