@@ -17,7 +17,7 @@ while($row = mysqli_fetch_array($primer)) {
  // $sett = mysqli_query($con, "SELECT setting FROM userPref WHERE uid = $_SESSION[id];");
  // $act = mysqli_query($con, "SELECT activity FROM userPref WHERE uid = $_SESSION[id];");
  // $price = mysqli_query($con, "SELECT price FROM userPref WHERE uid = $_SESSION[id];");
- $result = mysqli_query($con, "CALL getPrefLoc('$sett', '$act', '$price');") // <- stored procedure
+ $result = mysqli_query($con, "CALL getPrefLoc('$sett', '$act', '$price');")
 //   "SELECT lid, lname, setting, activity, address,description,price
 // FROM (SELECT lid, lname, setting, activity, address,description,price,
 // (settingCt + activCt+ priceCt) as totalCt
@@ -86,27 +86,15 @@ if (mysqli_num_rows($result) > 0) {
   
   <tr>
     <td>Location Name</td>
-    <td>Setting</td>
-    <td>Activity</td>
-    <td>Price Range</td>
     <td>Location Address</td>
     <td>Already Visited?</td>
   </tr>
 <?php
 $i=0;
 while($row = mysqli_fetch_array($result)) {
-  if($row["price"] == 1)
-    $price_display = "$1-30";
-  if($row["price"] == 2)
-    $price_display = "$40-80";
-  if($row["price"] == 3)
-    $price_display = "$80 and above";
 ?>
 <tr>
-     <td><?php echo '<a href="reviewView.php?lid=' . $row["lid"] . '&lname=' . $row["lname"] . '&description=' . $row["description"] .'">' . $row["lname"] . '</a>';?></td>
-     <td><?php echo $row["setting"]; ?></td>
-     <td><?php echo $row["activity"]; ?></td>
-     <td><?php echo $price_display;?></td>
+     <td><?php echo '<a href="reviewView.php?lid=' . $row["lid"] . '&lname=' . $row["lname"] . '">' . $row["lname"] . '</a>';?></td>
      <td><?php echo $row["address"]; ?></td>
      <td><?php echo '<a href="visitedForm.php?lid=' . $row["lid"] .'">Click Here</a>';?></td>
 </tr>
