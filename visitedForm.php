@@ -48,7 +48,7 @@ $(function(){
  <input type="hidden" id="lid" name="lid" value=<?php echo "{$lid}"?> >
 
 <label for="date">Date Visited</label>
-<input type="date" id="date" name="date"><br>
+<input type="date" id="date" name="date" required><br>
   <p><input type="submit" /></p>
 </form>
 </center>

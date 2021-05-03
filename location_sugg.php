@@ -11,7 +11,7 @@
  // Form the SQL query (an INSERT query)
  $sql="INSERT INTO locationIdea (lname, setting, activity, address, price, description, uid)
  VALUES
- ('$_POST[name]','$_POST[settingType]','$_POST[activityType]', '$_POST[address]', '$_POST[price]', '$_POST[description]', $_SESSION[id])";
+ ('$_POST[name]','$_POST[settingType]','$_POST[activityType]', '$_POST[address]', '$_POST[priceType]', '$_POST[description]', $_SESSION[id])";
 
  if (!mysqli_query($con,$sql))
  {

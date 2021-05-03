@@ -30,13 +30,13 @@ $(function(){
  <br>
  <form action="/userPref.php">
        <label for="settingType">Choose a Setting:</label>
-       <select name="settingType" id="setting">
+       <select name="settingType" id="setting" required>
               <option value="indoor">Indoor</option>
               <option value="outdoor">Outdoor</option>
        </select>
        <br>
        <label for="activityType">Choose a Activity:</label>
-       <select name="activityType" id="activity">
+       <select name="activityType" id="activity" required>
               <option value="food">Food</option>
               <option value="exercise">Exercise</option>
               <option value="hike">Hiking</option>
@@ -46,7 +46,7 @@ $(function(){
        </select>
        <br>
        <label for="priceType">Whats Your Price Range:</label>
-       <select name="priceType" id="price">
+       <select name="priceType" id="price" required>
               <option value="1">$1-$30</option>
               <option value="2">$40-$80</option>
               <option value="3">$80 and Above</option>
