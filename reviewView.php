@@ -6,12 +6,14 @@ if (mysqli_connect_errno())
  {
  echo "Failed to connect to MySQL: " . mysqli_connect_error();
  }
- $result = mysqli_query($con,"SELECT * FROM location");
+ $lid = $_GET['lid'];
+ $result = mysqli_query($con,"SELECT * FROM has NATURAL JOIN review WHERE lid = '$lid'");
+ $lname = $_GET['lname'];
 ?>
 <!DOCTYPE html>
 <html>
  <head>
- <title> Locations </title>
+ <title> Reviews </title>
  <style>
      table {
     font-family: arial, sans-serif;
@@ -33,24 +35,23 @@ if (mysqli_connect_errno())
  
  </head>
 <body>
+  <h1> <?php echo "Reviews for {$lname}" ?> </h1>
 <?php
 if (mysqli_num_rows($result) > 0) {
 ?>
   <table>
   
   <tr>
-    <td>lname</td>
-    <td>address</td>
-    <td>Already Visited?</td>
+    <td>description</td>
+    <td>datePosted</td>
   </tr>
 <?php
-$i=0;
+
 while($row = mysqli_fetch_array($result)) {
 ?>
 <tr>
-     <td><?php echo '<a href="reviewView.php?lid=' . $row["lid"] . '&lname=' . $row["lname"] . '">' . $row["lname"] . '</a>';?></td>
-     <td><?php echo $row["address"]; ?></td>
-     <td><?php echo '<a href="visitedForm.php?lid=' . $row["lid"] .'">Click</a>';?></td>
+     <td><?php echo $row["description"];?></td>
+     <td><?php echo $row["datePosted"]; ?></td>
 </tr>
 <?php
 $i++;
@@ -63,5 +64,6 @@ else{
     echo "No result found";
 }
 ?>
+<p><?php echo '<a href="reviewForm.php?lid=' . $lid . '">Rate this location</a>'?></p>
  </body>
 </html>
