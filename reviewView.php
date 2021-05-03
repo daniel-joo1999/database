@@ -14,6 +14,13 @@ if (mysqli_connect_errno())
 <html>
  <head>
  <title> Reviews </title>
+ <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
  <style>
      table {
     font-family: arial, sans-serif;
@@ -32,7 +39,18 @@ if (mysqli_connect_errno())
         background-color: white;
     }
  </style>
- 
+   <!--Navigation bar-->
+<div id="nav-placeholder">
+
+</div>
+
+<script>
+$(function(){
+  $("#nav-placeholder").load("base.html");
+});
+</script>
+<!--end of Navigation bar-->
+
  </head>
 <body>
   <h1> <?php echo "Reviews for {$lname}" ?> </h1>
@@ -42,8 +60,8 @@ if (mysqli_num_rows($result) > 0) {
   <table>
   
   <tr>
-    <td>description</td>
-    <td>datePosted</td>
+    <td>Review</td>
+    <td>Date</td>
   </tr>
 <?php
 
@@ -64,6 +82,6 @@ else{
     echo "No result found";
 }
 ?>
-<p><?php echo '<a href="reviewForm.php?lid=' . $lid . '">Rate this location</a>'?></p>
+<p><?php echo '<a href="reviewForm.php?lid=' . $lid . '">Leave a review!</a>'?></p>
  </body>
 </html>

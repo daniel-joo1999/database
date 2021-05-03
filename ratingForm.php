@@ -44,7 +44,7 @@ $(function(){
         <option value="5">*****</option>
   </select><br>
 <label for="date"> Date Visited</label><br>
-<input type="text" id="date" name="date"><br>
+<input type="date" id="date" name="date"><br>
 
 <label for="description">Please explain why</label><br>
  <textarea for="description" name="description" rows="4" cols="50"></textarea><br>

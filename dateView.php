@@ -59,10 +59,10 @@ if (mysqli_num_rows($result) > 0) {
   <table>
   
   <tr>
-    <td>ideaTitle</td>
-    <td>description</td>
-    <td>dateVisited</td>
-    <td>rating</td>
+    <td>Idea Name</td>
+    <td>Idea Description</td>
+    <td>Date Visited</td>
+    <td>Rating</td>
   </tr>
 <?php
 $i=0;
