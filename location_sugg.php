@@ -19,6 +19,6 @@
  }
  echo "1 record added"; // Output to user
  mysqli_close($con);
- header('Location: index.html');
+ header('Location: home.html');
 
 ?>
