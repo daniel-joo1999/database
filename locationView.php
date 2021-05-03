@@ -86,15 +86,27 @@ if (mysqli_num_rows($result) > 0) {
   
   <tr>
     <td>Location Name</td>
+    <td>Setting</td>
+    <td>Activity</td>
+    <td>Price</td>
     <td>Location Address</td>
     <td>Already Visited?</td>
   </tr>
 <?php
 $i=0;
 while($row = mysqli_fetch_array($result)) {
+  if($row["price" == 1])
+    $price_desc = "$1-$30";
+  if($row["price" == 2])
+    $price_desc = "$40-$80";
+  if($row["price" == 3])
+    $price_desc = "$80 or above";  
 ?>
 <tr>
-     <td><?php echo '<a href="reviewView.php?lid=' . $row["lid"] . '&lname=' . $row["lname"] . '">' . $row["lname"] . '</a>';?></td>
+     <td><?php echo '<a href="reviewView.php?lid=' . $row["lid"] . '&lname=' . $row["lname"] . '&description=' . $row["description"] . '">' . $row["lname"] . '</a>';?></td>
+     <td><?php echo $row["setting"]; ?></td>
+     <td><?php echo $row["activity"]; ?></td>
+     <td><?php echo $price_desc; ?></td>
      <td><?php echo $row["address"]; ?></td>
      <td><?php echo '<a href="visitedForm.php?lid=' . $row["lid"] .'">Click Here</a>';?></td>
 </tr>

@@ -9,6 +9,7 @@ if (mysqli_connect_errno())
  $lid = $_GET['lid'];
  $result = mysqli_query($con,"SELECT * FROM has NATURAL JOIN review WHERE lid = '$lid'");
  $lname = $_GET['lname'];
+ $description = $_GET['description'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -55,6 +56,7 @@ $(function(){
 <body>
   <div class="jumbotron text-center">
   <h1> <?php echo "Reviews for {$lname}" ?> </h1>
+  <p> <?php echo "{$description}"?></p>
 </div>
 <div class="container">
   <center>
