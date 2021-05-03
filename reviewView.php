@@ -60,6 +60,8 @@ $(function(){
 </div>
 <div class="container">
   <center>
+  <h1>Reviews</h1>
+  <br></br>
 <?php
 if (mysqli_num_rows($result) > 0) {
 ?>
@@ -67,7 +69,7 @@ if (mysqli_num_rows($result) > 0) {
   
   <tr>
     <td><strong>Review</strong></td>
-    <td><strong>Date</strong></td>
+    <td><strong>Date Reviewed</strong></td>
   </tr>
 <?php
 
@@ -86,7 +88,7 @@ $i++;
  <?php
 }
 else{
-    echo "No result found";
+    echo "No reviews found";
 }
 ?>
 <br>
